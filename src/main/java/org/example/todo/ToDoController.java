@@ -26,7 +26,7 @@ public class ToDoController {
     @PostMapping("/api/todo")
     public void addToDo(@RequestBody ToDoDTO toDoDTO) {
         //Map ToDoDTO to ToDoEntry
-        ToDoEntry toDoEntry = toDoService.mapToDoDTOtoEntry(toDoDTO);
+        ToDoEntry toDoEntry = toDoService.mapToDoDTOToEntry(toDoDTO);
         //Save the mapped ToDoEntry
         toDoService.createToDo(toDoEntry);
     }
