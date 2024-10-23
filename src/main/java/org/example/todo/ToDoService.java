@@ -8,7 +8,7 @@ import java.util.List;
 public class ToDoService {
     private final ToDoRepository toDoRepository;
 
-    //Inject the repo via constructor
+    //Inject the ToDoRepository via constructor
     public ToDoService(ToDoRepository toDoRepository){
         this.toDoRepository = toDoRepository;
     }

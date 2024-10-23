@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data // Generates Getter, Setter and so on...
+@Data // Generates Getter, Setter, to String and so on...
 @NoArgsConstructor
 @AllArgsConstructor
 public class ToDoDTO {

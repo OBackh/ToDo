@@ -17,7 +17,7 @@ public class ToDoController {
         this.toDoService = toDoService;
     }
 
-    //Fetch all todos through the service layer
+    //Fetch all the todos through the service layer
     @GetMapping("/api/todo")
     public List<ToDoEntry> getAllToDos() {
         return toDoService.findAll();

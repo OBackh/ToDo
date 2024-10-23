@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ToDoRepository extends MongoRepository<ToDoEntry, String> {
+
 }
