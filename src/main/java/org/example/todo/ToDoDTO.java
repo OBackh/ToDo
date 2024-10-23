@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ToDoDTO {
     private String description;
-    private String status;
+    private ToDoStatus status; //Use of Enum!!
 }
