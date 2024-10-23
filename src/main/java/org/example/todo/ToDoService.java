@@ -23,4 +23,10 @@ public class ToDoService {
         return toDoRepository.findAll();
     }
 
+    //Mapping from ToDoDTO to ToDoEntry
+    public ToDoEntry mapToDoDTOToEntry(ToDoDTO toDoDTO) {
+        // Validation
+        return new ToDoEntry(null, toDoDTO.getDescription(), toDoDTO.getStatus());
+    }
+
 }
