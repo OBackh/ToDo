@@ -1,8 +1,10 @@
 package org.example.todo;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ToDoController {
@@ -29,8 +31,13 @@ public class ToDoController {
     }
 
     @GetMapping("/api/todo/{id}")
-    public ToDoEntry findById(@PathVariable String id) {
-        return toDoService.findToDoById(id);
-    }
+    public ResponseEntity<ToDoEntry> getToDoById(@PathVariable String id) {
+        Optional<ToDoEntry> toDoEntry = toDoService.findToDoById(id);
+        if (toDoEntry.isPresent()) {
+            return ResponseEntity.ok(toDoEntry.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
 
+    }
 }
