@@ -13,7 +13,7 @@ public class ToDoService {
         this.toDoRepository = toDoRepository;
     }
 
-    // Method to create a new 2Do-Entry
+    // Method to create a new TwoDo-Entry
     public void createToDo(ToDoEntry toDoEntry) {
         toDoRepository.save(toDoEntry);
     }
@@ -27,6 +27,16 @@ public class ToDoService {
     public ToDoEntry mapToDoDTOToEntry(ToDoDTO toDoDTO) {
         // Validation
         return new ToDoEntry(null, toDoDTO.getDescription(), toDoDTO.getStatus());
+    }
+
+    //HIER WEITER AM DONNERSTAG!!!
+    public ToDoEntry findToDoById(String id){
+        for(ToDoEntry toDoEntry : toDoRepository){
+            if(toDoEntry.id() == id){
+                ToDoRepository.remove(toDoEntry);
+            }
+        }
+        return toDoRepository.toString();
     }
 
 }
